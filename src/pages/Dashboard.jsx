@@ -8,7 +8,6 @@ const Dashboard = () => {
   const [form, setForm] = useState({ name: "", description: "", location: "" });
 
   useEffect(() => {
-    // Tambahkan data dummy dan data dari API
     const fetchData = async () => {
       try {
         // Data dummy
@@ -21,7 +20,6 @@ const Dashboard = () => {
         // Data dari API
         const apiData = await getDroughtData();
 
-        // Gabungkan data dummy dan API
         setDroughtData([...dummyData, ...apiData]);
       } catch (err) {
         console.error("Error saat mengambil data:", err);
@@ -33,7 +31,7 @@ const Dashboard = () => {
 
   const openModal = (data) => {
     setModalData(data);
-    setForm(data); // Isi form dengan data yang akan diedit
+    setForm(data); 
   };
 
   const closeModal = () => {
@@ -51,7 +49,7 @@ const Dashboard = () => {
       return;
     }
     try {
-      const updatedData = { ...modalData, ...form }; // Simulasi pembaruan data
+      const updatedData = { ...modalData, ...form }; 
       setDroughtData(
         droughtData.map((item) =>
           item.id === modalData.id ? updatedData : item
@@ -66,8 +64,8 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await deleteDroughtData(id); // Hapus data di server
-      setDroughtData(droughtData.filter((item) => item.id !== id)); // Hapus data di state
+      await deleteDroughtData(id); 
+      setDroughtData(droughtData.filter((item) => item.id !== id)); 
       Swal.fire("Berhasil", "Data berhasil dihapus!", "success");
     } catch (err) {
       Swal.fire("Gagal", "Terjadi kesalahan saat menghapus data.", "error");

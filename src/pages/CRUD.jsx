@@ -17,7 +17,7 @@ const CRUD = () => {
     }
     try {
       await addDroughtData(form);
-      setForm({ name: "", description: "", location: "" }); // Reset form
+      setForm({ name: "", description: "", location: "" }); 
       Swal.fire("Berhasil", "Data berhasil ditambahkan!", "success");
     } catch (err) {
       Swal.fire("Gagal", "Terjadi kesalahan saat menambahkan data.", "error");

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/slices/authSlice"; // Import action login
+import { login } from "../redux/slices/authSlice"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
-  const [showPassword, setShowPassword] = useState(false); // State untuk kontrol ikon mata
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Inisialisasi dispatch Redux
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -17,11 +17,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simulasi login sukses
-    dispatch(login(form)); // Dispatch Redux action login dengan payload form
+    dispatch(login(form)); 
     console.log("Login berhasil:", form);
 
-    navigate("/home"); // Arahkan ke halaman Home
+    navigate("/home"); 
   };
 
   return (

@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Register = () => {
   const [form, setForm] = useState({ email: "", password: "", confirmPassword: "" });
-  const [showPassword, setShowPassword] = useState(false); // Kontrol ikon mata untuk password
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Kontrol ikon mata untuk konfirmasi password
+  const [showPassword, setShowPassword] = useState(false); 
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -18,7 +18,7 @@ const Register = () => {
       alert("Password dan Konfirmasi Password harus sama!");
       return;
     }
-    // Simulasi pendaftaran sukses
+    
     console.log("Pendaftaran berhasil:", form);
     navigate("/login");
   };
